@@ -7,477 +7,430 @@
 <meta name="description" content="India-side property documentation drafted to High Court standard. Advocate with High Court Uttarakhand standing, based in Dubai. 48-hour delivery.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ============================================================
+   VAKEEL STREET — INK SYSTEM v2
+   Strain fix: deepest ink reserved for headings only.
+   Body softened to warm sepia. Generous leading. Paper breathes.
+   ============================================================ */
+:root{
+  --paper:      #EDE8DC;
+  --paper-lift: #F3EFE5;   /* lifted paper for cards — less density */
+  --ink-deep:   #1A1008;   /* headings ONLY */
+  --ink-body:   #46342355; /* never used raw — see --ink-body-solid */
+  --ink-body-solid: #463423; /* body text — softened sepia, was #2C1A0E */
+  --ink-soft:   #6E5C48;   /* captions, meta, small-caps */
+  --cloth:      #5C4A35;
+  --rust:       #8B4513;
+  --rust-deep:  #74380F;
+  --hairline:   rgba(44,26,14,.18);
+  --serif-display:'Cormorant Garamond', Georgia, serif;
+  --serif-body:'Lora', Georgia, serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--serif-body);
+  background:var(--paper);
+  color:var(--ink-body-solid);
+  font-size:17px;
+  line-height:1.78;          /* strain fix: raised from typical 1.5 */
+  letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* Paper texture as <img> per standing rule — placeholder grain,
+   swap src for Magnific handmade-paper asset at commit */
+.paper-layer{
+  position:fixed;inset:0;width:100%;height:100%;
+  object-fit:cover;z-index:0;pointer-events:none;opacity:.5;
+}
+.page{position:relative;z-index:1}
 
-  html { scroll-behavior: smooth; }
+h1,h2,h3{font-family:var(--serif-display);color:var(--ink-deep);font-weight:600;line-height:1.12}
+.smallcaps{
+  font-family:var(--serif-body);
+  text-transform:uppercase;letter-spacing:.22em;
+  font-size:.72rem;color:var(--ink-soft);font-weight:500;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+section{position:relative}
 
-  body {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    background: #EDE8DC;
-    color: #1A1008;
-    -webkit-font-smoothing: antialiased;
-  }
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--hairline);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1080px;margin:0 auto}
+.wordmark{font-family:var(--serif-display);font-weight:700;font-size:1.25rem;color:var(--ink-deep);text-decoration:none;letter-spacing:.02em}
+.nav-links{display:flex;gap:28px}
+.nav-links a{
+  color:var(--ink-soft);text-decoration:none;font-size:.85rem;
+  text-transform:uppercase;letter-spacing:.14em;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-4px;height:1.5px;width:100%;
+  background:var(--rust);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s cubic-bezier(.25,.8,.25,1);
+}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+.nav-links a:hover{color:var(--ink-deep)}
 
-  /* NAV */
-  nav {
-    background: #1A1008;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .nav-logo {
-    color: #EDE8DC;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-decoration: none;
-  }
-  .nav-links a {
-    color: #8B7355;
-    font-size: 12px;
-    font-family: sans-serif;
-    text-decoration: none;
-    margin-left: 24px;
-    letter-spacing: 0.06em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: #EDE8DC; }
+/* ---------- hero ---------- */
+.hero{padding:72px 0 88px;min-height:78vh;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:56px;align-items:center;width:100%}
+.hero h1{
+  font-size:clamp(2.6rem,5.6vw,4.4rem);
+  font-weight:600;letter-spacing:-.01em;margin:26px 0 0;
+}
+.hero h1 em{font-style:italic;font-weight:500}
+.hero-line{display:block;opacity:0;transform:translateY(26px)}
+.inkstroke{display:block;width:min(340px,72%);height:26px;overflow:visible}
+.inkstroke path{
+  fill:none;stroke:var(--rust);stroke-width:3.4;stroke-linecap:round;
+  stroke-dasharray:520;stroke-dashoffset:520;
+}
+.hero-sub{
+  margin-top:26px;font-size:1.16rem;line-height:1.8;max-width:34rem;
+  opacity:0;transform:translateY(20px);
+}
+.hero-creds{margin-top:22px;opacity:0;transform:translateY(16px)}
+.hero-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;opacity:0;transform:translateY(16px)}
 
-  /* INK RULE */
-  .ink-rule {
-    display: block;
-    width: 100%;
-    height: 12px;
-    background: #EDE8DC;
-  }
+.btn{
+  display:inline-block;text-decoration:none;font-family:var(--serif-body);
+  font-size:.92rem;letter-spacing:.06em;padding:15px 30px;border-radius:2px;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-rust{background:var(--rust);color:#F7F2E7;box-shadow:0 1px 0 rgba(26,16,8,.25)}
+.btn-rust:hover,.btn-rust:focus-visible{background:var(--rust-deep);transform:translateY(-3px);box-shadow:0 8px 18px -8px rgba(116,56,15,.55)}
+.btn-rust:active{transform:translateY(0) scale(.985)}
+.btn-ghost{color:var(--ink-deep);border:1px solid var(--hairline)}
+.btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--rust);color:var(--rust);transform:translateY(-3px)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
 
-  /* HERO */
-  .hero {
-    background: #EDE8DC;
-    padding: 60px 40px 52px;
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .hero-text { flex: 1.6; min-width: 0; }
-  .hero-img {
-    flex: 1;
-    background: #D4CCBB;
-    border-radius: 3px;
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #8B7355;
-    font-size: 12px;
-    font-family: sans-serif;
-    text-align: center;
-    padding: 20px;
-    gap: 12px;
-    line-height: 1.6;
-  }
-  .hero-img svg { opacity: 0.4; }
+/* page-load orchestration */
+.loaded .inkstroke path{animation:draw 1.4s cubic-bezier(.6,.05,.3,.95) .15s forwards}
+.loaded .hero-line{animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.loaded .hero-line:nth-child(1){animation-delay:1.15s}
+.loaded .hero-line:nth-child(2){animation-delay:1.32s}
+.loaded .hero-line:nth-child(3){animation-delay:1.49s}
+.loaded .hero-sub{animation:rise .8s cubic-bezier(.2,.7,.2,1) 1.85s forwards}
+.loaded .hero-creds{animation:rise .8s cubic-bezier(.2,.7,.2,1) 2.05s forwards}
+.loaded .hero-ctas{animation:rise .8s cubic-bezier(.2,.7,.2,1) 2.2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
 
-  h1 {
-    font-size: 56px;
-    color: #1A1008;
-    line-height: 1.08;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    margin-bottom: 8px;
-  }
-  h1 em {
-    font-style: italic;
-    color: #5C4A35;
-  }
+/* portrait placeholder */
+.portrait{
+  aspect-ratio:4/5;background:var(--paper-lift);
+  border:1px solid var(--hairline);border-radius:2px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  box-shadow:14px 14px 0 -6px rgba(92,74,53,.14);
+  opacity:0;transform:translateY(20px);
+}
+.loaded .portrait{animation:rise 1s cubic-bezier(.2,.7,.2,1) 1.6s forwards}
+.portrait span{color:var(--ink-soft);font-style:italic;font-size:.95rem}
 
-  .credentials {
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #8B4513;
-    font-family: sans-serif;
-    font-weight: 400;
-    margin: 16px 0 22px;
-  }
+/* ---------- scroll-reveal primitives ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.inked{opacity:1;transform:translateY(0)}
+.underline-draw{display:block;width:120px;height:10px;margin-top:14px}
+.underline-draw path{fill:none;stroke:var(--rust);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:140;stroke-dashoffset:140;transition:stroke-dashoffset 1s cubic-bezier(.6,.05,.3,.95) .2s}
+.inked .underline-draw path{stroke-dashoffset:0}
 
-  .subhead {
-    font-size: 19px;
-    color: #2C1A0E;
-    line-height: 1.62;
-    font-weight: 400;
-    opacity: 0.9;
-    margin-bottom: 36px;
-  }
+/* ---------- monologue ---------- */
+.monologue{padding:96px 0;text-align:center}
+.monologue blockquote{
+  font-family:var(--serif-display);font-style:italic;font-weight:500;
+  font-size:clamp(1.5rem,3.2vw,2.2rem);line-height:1.45;color:var(--cloth);
+  max-width:46rem;margin:0 auto;
+}
+.monologue p{margin-top:26px;font-size:1.1rem;color:var(--ink-deep)}
+.monologue .note{margin-top:18px;font-size:.8rem;color:var(--ink-soft);font-style:italic}
 
-  .btn-primary {
-    display: inline-block;
-    background: #8B4513;
-    color: #EDE8DC;
-    padding: 13px 32px;
-    font-size: 16px;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 0.05em;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: #6B3410; }
+/* ---------- steps : scrollytelling ---------- */
+.steps{padding:88px 0 100px;border-top:1px solid var(--hairline)}
+.steps-head{max-width:40rem}
+.steps h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px}
+.step{
+  display:grid;grid-template-columns:120px 1fr;gap:32px;
+  padding:54px 0;border-bottom:1px solid var(--hairline);align-items:start;
+}
+.step:last-child{border-bottom:none}
+.step-no{
+  font-family:var(--serif-display);font-size:4.4rem;font-weight:500;
+  color:var(--rust);line-height:1;opacity:.92;
+}
+.step h3{font-size:1.55rem;margin-bottom:12px}
+.step p{max-width:38rem}
+/* sequential ink-in: number first, then text */
+.step .step-no{opacity:0;transform:translateX(-18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.step .step-body{opacity:0;transform:translateY(22px);transition:opacity .8s ease .25s,transform .8s cubic-bezier(.2,.7,.2,1) .25s}
+.step.inked .step-no{opacity:.92;transform:none}
+.step.inked .step-body{opacity:1;transform:none}
 
-  .btn-ghost {
-    display: inline-block;
-    color: #5C4A35;
-    font-size: 15px;
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: 0.04em;
-    text-decoration: underline;
-    padding: 13px 18px;
-  }
+/* ---------- pricing ---------- */
+.pricing{padding:88px 0 100px;border-top:1px solid var(--hairline)}
+.pricing h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px}
+.pricing .intro{margin-top:18px;max-width:36rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px}
+.card{
+  background:var(--paper-lift);border:1px solid var(--hairline);border-radius:2px;
+  padding:34px 28px;position:relative;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .3s ease;
+}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 30px -18px rgba(44,26,14,.35);border-color:rgba(139,69,19,.45)}
+.card .badge{
+  position:absolute;top:-12px;left:28px;background:var(--rust);color:#F7F2E7;
+  font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;padding:5px 12px;border-radius:2px;
+}
+.price{font-family:var(--serif-display);font-size:2.6rem;font-weight:600;color:var(--ink-deep)}
+.price s{font-size:1.3rem;color:#A14A3A;font-weight:400;margin-left:10px;text-decoration-thickness:2px}
+.card h3{font-size:1.2rem;margin:10px 0 12px}
+.card p{font-size:.97rem;line-height:1.7}
 
-  /* MONOLOGUE */
-  .monologue {
-    background: #2C1A0E;
-    padding: 60px 40px;
-  }
-  .monologue-inner {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-  .mono-text {
-    font-size: 30px;
-    color: #EDE8DC;
-    font-style: italic;
-    line-height: 1.38;
-    font-weight: 400;
-    margin-bottom: 18px;
-  }
-  .mono-disclaimer {
-    font-size: 13px;
-    color: #8B7355;
-    font-family: sans-serif;
-    letter-spacing: 0.05em;
-    margin-bottom: 32px;
-  }
-  .sig-placeholder {
-    display: inline-block;
-    border-bottom: 1px solid #5C4A35;
-    color: #8B7355;
-    font-size: 13px;
-    font-family: sans-serif;
-    padding-bottom: 5px;
-    letter-spacing: 0.08em;
-  }
+/* ---------- proof of work strip ---------- */
+.proofstrip{padding:80px 0;border-top:1px solid var(--hairline)}
+.proofstrip .row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.proofstrip h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:14px}
+.proofstrip a.more{color:var(--rust);text-decoration:none;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1.5px solid transparent;transition:border-color .3s}
+.proofstrip a.more:hover{border-color:var(--rust)}
 
-  /* HOW IT WORKS */
-  .how {
-    background: #1A1008;
-    padding: 60px 40px;
-  }
-  .how-inner {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  .section-label {
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: #8B4513;
-    font-family: sans-serif;
-    margin-bottom: 16px;
-  }
-  .how h2 {
-    font-size: 34px;
-    color: #EDE8DC;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: 40px;
-  }
-  .steps { display: flex; flex-direction: column; }
-  .step {
-    display: flex;
-    gap: 22px;
-    padding: 24px 0;
-    border-bottom: 0.5px solid #3A2510;
-  }
-  .step:last-child { border-bottom: none; }
-  .step-num {
-    font-size: 38px;
-    color: #8B4513;
-    font-weight: 400;
-    font-style: italic;
-    min-width: 44px;
-    line-height: 1;
-  }
-  .step-title {
-    font-size: 18px;
-    color: #EDE8DC;
-    font-weight: 500;
-    margin-bottom: 7px;
-  }
-  .step-body {
-    font-size: 14px;
-    color: #8B7355;
-    line-height: 1.7;
-    font-family: sans-serif;
-  }
+/* ---------- closing / signature ---------- */
+.closing{padding:110px 0 90px;text-align:center;border-top:1px solid var(--hairline)}
+.closing h2{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:34rem;margin:0 auto}
+.sig{width:240px;height:90px;margin:44px auto 0;display:block}
+.sig path{fill:none;stroke:var(--ink-deep);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2.2s cubic-bezier(.5,.05,.3,.95) .3s}
+.inked .sig path{stroke-dashoffset:0}
+.sig-caption{margin-top:6px}
+.sig-note{font-size:.74rem;color:var(--ink-soft);font-style:italic;margin-top:10px}
 
-  /* PRICING */
-  .pricing {
-    background: #EDE8DC;
-    padding: 60px 40px;
-  }
-  .pricing-inner { max-width: 860px; margin: 0 auto; }
-  .pricing-label { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #8B4513; font-family: sans-serif; margin-bottom: 6px; }
-  .pricing-offer-tag {
-    display: inline-block;
-    font-size: 12px;
-    font-family: sans-serif;
-    background: #8B4513;
-    color: #EDE8DC;
-    padding: 4px 12px;
-    border-radius: 2px;
-    letter-spacing: 0.06em;
-    margin-bottom: 16px;
-  }
-  .pricing h2 {
-    font-size: 32px;
-    color: #1A1008;
-    font-weight: 500;
-    margin-bottom: 8px;
-  }
-  .pricing-expiry {
-    font-size: 13px;
-    color: #8B7355;
-    font-family: sans-serif;
-    margin-bottom: 36px;
-    letter-spacing: 0.04em;
-  }
-  .price-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-  }
-  .price-card {
-    background: #F7F3EC;
-    border: 0.5px solid #C8BFA8;
-    border-radius: 3px;
-    padding: 24px 22px;
-  }
-  .price-card.featured { border: 1.5px solid #8B4513; }
-  .price-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
-  .price-current {
-    font-size: 34px;
-    color: #8B4513;
-    font-weight: 500;
-    line-height: 1;
-  }
-  .price-original {
-    font-size: 18px;
-    color: #B08060;
-    text-decoration: line-through;
-    text-decoration-color: #C0392B;
-    text-decoration-thickness: 2px;
-    font-weight: 400;
-  }
-  .price-name {
-    font-size: 16px;
-    color: #1A1008;
-    font-weight: 500;
-    margin: 8px 0 10px;
-  }
-  .price-desc {
-    font-size: 13px;
-    color: #5C4A35;
-    line-height: 1.65;
-    font-family: sans-serif;
-  }
-  .featured-badge {
-    font-size: 11px;
-    background: #8B4513;
-    color: #EDE8DC;
-    padding: 3px 10px;
-    border-radius: 2px;
-    display: inline-block;
-    margin-bottom: 12px;
-    font-family: sans-serif;
-    letter-spacing: 0.06em;
-  }
+/* ---------- footer ---------- */
+footer{background:var(--cloth);color:#E9E1D2;padding:54px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+footer .fname{font-family:var(--serif-display);font-size:1.2rem;color:#F3EDE0}
+footer .fmeta{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#CBBFA9;margin-top:6px}
+footer nav{display:flex;gap:22px;flex-wrap:wrap}
+footer a{color:#E9E1D2;text-decoration:none;font-size:.88rem;border-bottom:1px solid transparent;transition:border-color .3s}
+footer a:hover{border-color:#E9E1D2}
+footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-spacing:.06em}
 
-  /* FOOTER */
-  footer {
-    background: #1A1008;
-    padding: 28px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-  .footer-name {
-    color: #EDE8DC;
-    font-size: 17px;
-    font-weight: 400;
-  }
-  .footer-sub {
-    color: #5C4A35;
-    font-size: 11px;
-    font-family: sans-serif;
-    margin-top: 4px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  footer a {
-    color: #5C4A35;
-    font-size: 12px;
-    font-family: sans-serif;
-    text-decoration: none;
-    margin-left: 18px;
-    transition: color 0.2s;
-  }
-  footer a:hover { color: #8B7355; }
+/* ---------- mobile ---------- */
+@media (max-width:880px){
+  .hero{padding:48px 0 64px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .portrait{max-width:320px;margin:0 auto}
+  .cards{grid-template-columns:1fr;gap:30px}
+  .step{grid-template-columns:64px 1fr;gap:20px;padding:42px 0}
+  .step-no{font-size:2.8rem}
+  body{font-size:16.5px}
+  .nav-links{gap:18px}
+  .nav-links a{font-size:.74rem}
+}
+@media (max-width:480px){
+  .nav-links a:nth-child(2){display:none}
+  .hero-ctas .btn{width:100%;text-align:center}
+}
 
-  /* RESPONSIVE */
-  @media (max-width: 680px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    .hero { flex-direction: column; padding: 40px 20px; }
-    h1 { font-size: 38px; }
-    .hero-img { min-height: 220px; order: -1; }
-    .monologue { padding: 44px 20px; }
-    .mono-text { font-size: 22px; }
-    .how { padding: 44px 20px; }
-    .pricing { padding: 44px 20px; }
-    footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
-    footer a { margin-left: 0; margin-right: 14px; }
+/* ---------- reduced motion: page arrives complete ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero-line,.hero-sub,.hero-creds,.hero-ctas,.portrait,.reveal,.step .step-no,.step .step-body{
+    opacity:1 !important;transform:none !important;animation:none !important;transition:none !important;
   }
+  .inkstroke path,.underline-draw path,.sig path{stroke-dashoffset:0 !important;animation:none !important;transition:none !important}
+  .btn,.card{transition:none}
+}
 </style>
 </head>
 <body>
+<!-- Paper as <img> per standing rule. Placeholder grain — swap src for
+     Magnific handmade-paper asset at commit. -->
+<img class="paper-layer" alt="" aria-hidden="true"
+src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.36 0 0 0 0 0.29 0 0 0 0 0.21 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E">
 
-<nav>
-  <a href="/" class="nav-logo">Vakeel Street</a>
-  <div class="nav-links">
-    <a href="#how">How it works</a>
-    <a href="#pricing">Services</a>
-    <a href="#contact">Contact</a>
+<div class="page">
+<header>
+  <div class="nav">
+    <a class="wordmark" href="#">Vakeel Street</a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Services</a>
+      <a href="proof.html">Proof of work</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<svg class="ink-rule" viewBox="0 0 1100 12" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true" style="display:block;width:100%;height:12px;background:#EDE8DC;">
-  <path d="M0,6 C100,3 200,9 330,6 C460,3 560,8 680,6 C800,4 900,8 1000,6 C1060,4 1080,7 1100,6" stroke="#8B4513" stroke-width="1.3" fill="none" opacity="0.55"/>
-</svg>
-
+<!-- ============ HERO — the ink commits to the first line ============ -->
 <section class="hero">
-  <div class="hero-text">
-    <h1>Every property<br>matter needs<br><em>an address.</em><br>This is yours.</h1>
-    <p class="credentials">Enrollment No. UK/429/13 &nbsp;&middot;&nbsp; High Court Uttarakhand &nbsp;&middot;&nbsp; 18 years at the bar &nbsp;&middot;&nbsp; Dubai</p>
-    <p class="subhead">You don't need to know the law.<br>You need someone who does —<br>and who will actually respond.</p>
-    <a class="btn-primary" href="#contact">Tell me your situation</a>
-    <a class="btn-ghost" href="#how">How it works</a>
-  </div>
-  <div class="hero-img">
-    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#8B7355" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-      <circle cx="12" cy="7" r="4"/>
-    </svg>
-    Portrait<br>Martin · Friday session
+  <div class="wrap hero-grid">
+    <div>
+      <svg class="inkstroke" viewBox="0 0 340 26" aria-hidden="true">
+        <path d="M4 16 C 60 6, 120 22, 178 13 S 290 8, 336 15"/>
+      </svg>
+      <h1>
+        <span class="hero-line">Every property matter</span>
+        <span class="hero-line">needs <em>an address.</em></span>
+        <span class="hero-line">This is yours.</span>
+      </h1>
+      <p class="hero-sub">You don't need to know the law. You need someone who does — and who will actually respond.</p>
+      <p class="hero-creds smallcaps">Enrollment No. UK/429/13 · High Court Uttarakhand · 18 years at the bar · Dubai</p>
+      <div class="hero-ctas">
+        <a class="btn btn-rust" href="#contact">Tell me your situation</a>
+        <a class="btn btn-ghost" href="#how">How it works</a>
+      </div>
+    </div>
+    <div class="portrait" role="img" aria-label="Portrait placeholder — Martin session, Friday 13 June">
+      <span>Portrait</span>
+      <span class="smallcaps">Martin · Friday 13 June</span>
+    </div>
   </div>
 </section>
 
+<!-- ============ MONOLOGUE ============ -->
 <section class="monologue">
-  <div class="monologue-inner">
-    <p class="mono-text">"It has been weeks. Nobody has responded. I don't even know if what I did was right."</p>
-    <p class="mono-disclaimer">Do you often think on these lines?</p>
-    <span class="sig-placeholder">Signature — Xitij Kaushik &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <div class="wrap">
+    <blockquote class="reveal">"It has been weeks. Nobody has responded. I don't even know if what I did was right."</blockquote>
+    <p class="reveal">Do you often think on these lines?</p>
+    <p class="note reveal">— an inner voice familiar to anyone managing property in India from abroad.</p>
   </div>
 </section>
 
-<section class="how" id="how">
-  <div class="how-inner">
-    <div class="section-label">How it works</div>
-    <h2>Three steps.<br>No office visit required.</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <div class="step-title">Tell me what you have</div>
-          <div class="step-body">Send me the documents you hold — title deed, mutation record, sale agreement — whatever exists. I read them and tell you exactly what is missing or what needs to move next.</div>
-        </div>
+<!-- ============ STEPS — the brief writes itself ============ -->
+<section class="steps" id="how">
+  <div class="wrap">
+    <div class="steps-head reveal">
+      <span class="smallcaps">How it works</span>
+      <h2>Three steps. No office visit required.</h2>
+      <svg class="underline-draw" viewBox="0 0 120 10" aria-hidden="true"><path d="M3 6 C 30 2, 70 9, 117 5"/></svg>
+    </div>
+
+    <div class="step">
+      <div class="step-no" aria-hidden="true">1</div>
+      <div class="step-body">
+        <h3>Tell me what you have</h3>
+        <p>Send me the documents you hold — title deed, mutation record, sale agreement — whatever exists. I read them and tell you exactly what is missing or what needs to move next.</p>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <div class="step-title">I draft the document</div>
-          <div class="step-body">Within 48 hours, your document is drafted to High Court standard — mutation application, title verification, power of attorney — ready to file.</div>
-        </div>
+    </div>
+
+    <div class="step">
+      <div class="step-no" aria-hidden="true">2</div>
+      <div class="step-body">
+        <h3>I draft the document</h3>
+        <p>Within 48 hours, your document is drafted to High Court standard — a contract, application, complaint, or strategic brief tailored to your situation. Precise enough to resolve the matter. Solid enough to form the basis of any further action in India.</p>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <div class="step-title">You move the matter forward</div>
-          <div class="step-body">You receive the document, sign where required, and file it — or I guide you through who files it and how. The paper moves. The record changes.</div>
-        </div>
+    </div>
+
+    <div class="step">
+      <div class="step-no" aria-hidden="true">3</div>
+      <div class="step-body">
+        <h3>You move the matter forward</h3>
+        <p>You receive the document. It is complete, precise, and ready for action. Present it to the relevant authority in India, or hand it to your POA, an affected relative, or any party in India who files on your behalf — it speaks for itself. No further briefing required. The matter moves forward.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ PRICING ============ -->
 <section class="pricing" id="pricing">
-  <div class="pricing-inner">
-    <div class="pricing-label">Services</div>
-    <div class="pricing-offer-tag">Founding rate — ends September 2026</div>
-    <h2>Documentation drafted.<br>Delivered in 48 hours.</h2>
-    <p class="pricing-expiry">Reduced pricing available until 30 September 2026. Standard rates apply from October.</p>
-    <div class="price-row">
-      <div class="price-card">
-        <div class="price-header">
-          <span class="price-current">$39</span>
-          <span class="price-original">$65</span>
-        </div>
-        <div class="price-name">Document review</div>
-        <div class="price-desc">I review what you hold and tell you exactly where things stand — what is missing, what needs to happen, and in what order.</div>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="smallcaps">Services — Founding rate, ends September 2026</span>
+      <h2>Documentation drafted.<br>Delivered in 48 hours.</h2>
+      <svg class="underline-draw" viewBox="0 0 120 10" aria-hidden="true"><path d="M3 6 C 30 2, 70 9, 117 5"/></svg>
+      <p class="intro">Reduced pricing available until 30 September 2026. Standard rates apply from October.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="price">$39 <s>$65</s></div>
+        <h3>Document review</h3>
+        <p>I review what you hold and tell you exactly where things stand — what is missing, what needs to happen, and in what order.</p>
       </div>
-      <div class="price-card featured">
-        <div class="featured-badge">Most chosen</div>
-        <div class="price-header">
-          <span class="price-current">$49</span>
-          <span class="price-original">$99</span>
-        </div>
-        <div class="price-name">Single document draft</div>
-        <div class="price-desc">One document drafted to High Court standard. 48-hour delivery. Mutation application, power of attorney, or title verification.</div>
+      <div class="card reveal">
+        <div class="badge">Most chosen</div>
+        <div class="price">$49 <s>$99</s></div>
+        <h3>Single document draft</h3>
+        <p>One document drafted to High Court standard. 48-hour delivery. A complaint, representation, application, contract, strategic brief, or power of attorney.</p>
       </div>
-      <div class="price-card">
-        <div class="price-header">
-          <span class="price-current">$75</span>
-          <span class="price-original">$150</span>
-        </div>
-        <div class="price-name">Full documentation set</div>
-        <div class="price-desc">Multiple documents drafted together where the matter requires more than one instrument to move forward.</div>
+      <div class="card reveal">
+        <div class="price">$75 <s>$150</s></div>
+        <h3>Full documentation set</h3>
+        <p>Multiple documents drafted together where the matter requires more than one instrument to move forward.</p>
       </div>
     </div>
   </div>
 </section>
 
-<footer id="contact">
-  <div>
-    <div class="footer-name">Xitij Kaushik</div>
-    <div class="footer-sub">Advocate &nbsp;&middot;&nbsp; High Court Uttarakhand &nbsp;&middot;&nbsp; Dubai</div>
+<!-- ============ PROOF OF WORK STRIP ============ -->
+<section class="proofstrip">
+  <div class="wrap row reveal">
+    <div>
+      <span class="smallcaps">Proof of work</span>
+      <h2>Read how I think before you write to me.</h2>
+    </div>
+    <a class="more" href="proof.html">Three published briefs →</a>
   </div>
-  <div>
-    <a href="#">Privacy</a>
-    <a href="#">Terms</a>
-    <a href="#">vakeelstreet@gmail.com</a>
+</section>
+
+<!-- ============ CLOSING — the signature ============ -->
+<section class="closing reveal" id="contact">
+  <div class="wrap">
+    <h2>Write to me. I respond — that is the entire point.</h2>
+    <div class="hero-ctas" style="justify-content:center;opacity:1;transform:none">
+      <a class="btn btn-rust" href="mailto:vakeelstreet@gmail.com">vakeelstreet@gmail.com</a>
+    </div>
+    <!-- Signature placeholder flourish — replaced by Xitij's handwritten
+         signature traced to SVG when provided -->
+    <svg class="sig" viewBox="0 0 240 90" aria-hidden="true">
+      <path d="M18 62 C 40 18, 58 24, 52 52 C 48 70, 70 66, 84 44 C 96 26, 104 30, 100 50 C 97 64, 112 62, 126 48 C 142 32, 158 36, 152 54 C 148 66, 166 64, 182 50 C 196 38, 214 44, 224 56"/>
+    </svg>
+    <p class="sig-caption smallcaps">Xitij Kaushik · Advocate</p>
+    <p class="sig-note">signature placeholder — your handwriting replaces this flourish</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="fname">Xitij Kaushik</div>
+      <div class="fmeta">Advocate · High Court Uttarakhand · Dubai</div>
+    </div>
+    <nav>
+      <a href="proof.html">Proof of work</a>
+      <a href="tos.html">Terms of service</a>
+      <a href="mailto:vakeelstreet@gmail.com">vakeelstreet@gmail.com</a>
+    </nav>
+    <div class="credit">Image: Magnific</div>
   </div>
 </footer>
+</div>
 
+<script>
+/* Editorial motion layer — ~25 lines, no libraries.
+   Reduced-motion users get the page complete and still. */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('js');
+  if(!reduce){ requestAnimationFrame(function(){ document.body.classList.add('loaded'); }); }
+  else { document.body.classList.add('loaded'); }
+
+  var targets = document.querySelectorAll('.reveal, .step');
+  if(reduce || !('IntersectionObserver' in window)){
+    targets.forEach(function(t){ t.classList.add('inked'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('inked'); io.unobserve(e.target); }
+    });
+  },{ threshold:.18, rootMargin:'0px 0px -8% 0px' });
+  targets.forEach(function(t){ io.observe(t); });
+})();
+</script>
 </body>
 </html>
