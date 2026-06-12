@@ -1,112 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proof of Work — Vakeel Street</title>
-<meta name="description" content="Published briefs by Xitij Kaushik, Advocate, High Court Uttarakhand — on NRI property documentation in India.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#EDE8DC;--paper-lift:#F3EFE5;--ink-deep:#1A1008;--ink-body:#463423;
-  --ink-soft:#6E5C48;--cloth:#5C4A35;--rust:#8B4513;--hairline:rgba(44,26,14,.18);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Lora',Georgia,serif;background:var(--paper);color:var(--ink-body);
-  font-size:17px;line-height:1.78;letter-spacing:.01em;-webkit-font-smoothing:antialiased}
-h1,h2{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink-deep);font-weight:600;line-height:1.15}
-.smallcaps{text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;color:var(--ink-soft);font-weight:500}
-.wrap{max-width:880px;margin:0 auto;padding:0 24px}
-header{border-bottom:1px solid var(--hairline)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1080px;margin:0 auto}
-.wordmark{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;color:var(--ink-deep);text-decoration:none}
-.nav a.back{color:var(--ink-soft);text-decoration:none;font-size:.85rem;text-transform:uppercase;letter-spacing:.14em}
-.nav a.back:hover{color:var(--rust)}
-.head{padding:78px 0 30px}
-.head h1{font-size:clamp(2.2rem,4.6vw,3.4rem);margin-top:14px}
-.underline-draw{display:block;width:120px;height:10px;margin-top:16px}
-.underline-draw path{fill:none;stroke:var(--rust);stroke-width:2.6;stroke-linecap:round;
-  stroke-dasharray:140;stroke-dashoffset:140;transition:stroke-dashoffset 1s cubic-bezier(.6,.05,.3,.95) .2s}
-.inked .underline-draw path{stroke-dashoffset:0}
-.head p{max-width:38rem;margin-top:20px}
-.articles{padding:36px 0 100px;display:grid;gap:28px}
-.article{
-  display:block;background:var(--paper-lift);border:1px solid var(--hairline);border-radius:2px;
-  padding:34px 32px;text-decoration:none;color:var(--ink-body);
-  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,border-color .3s;
-}
-.article:hover{transform:translateY(-5px);box-shadow:0 18px 30px -18px rgba(44,26,14,.35);border-color:rgba(139,69,19,.45)}
-.article h2{font-size:1.5rem;margin:8px 0 10px}
-.article p{font-size:.97rem}
-.article .read{display:inline-block;margin-top:14px;color:var(--rust);font-size:.84rem;
-  text-transform:uppercase;letter-spacing:.14em;border-bottom:1.5px solid transparent;transition:border-color .3s}
-.article:hover .read{border-color:var(--rust)}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-.reveal.inked{opacity:1;transform:translateY(0)}
-footer{background:var(--cloth);color:#E9E1D2;padding:42px 0;text-align:center;font-size:.85rem}
-footer a{color:#E9E1D2}
-@media (max-width:600px){.article{padding:26px 22px}}
-@media (prefers-reduced-motion: reduce){
-  .reveal{opacity:1!important;transform:none!important;transition:none!important}
-  .underline-draw path{stroke-dashoffset:0!important;transition:none!important}
-  .article{transition:none}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proof of Work — Vakeel Street</title>
+  <meta name="description" content="Published briefs by Xitij Kaushik, Advocate, High Court Uttarakhand — on NRI property documentation in India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper:         #EDE8DC;
+      --paper-lift:    #F3EFE5;
+      --ink-deep:      #1A1008;
+      --ink-body:      #463423;
+      --ink-soft:      #6E5C48;
+      --cloth:         #5C4A35;
+      --rust:          #8B4513;
+      --rust-deep:     #74380F;
+      --hairline:      rgba(44,26,14,.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cloth);
+      color: var(--ink-body);
+      font-family: 'Lora', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.78;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .paper-layer {
+      position: fixed;
+      inset: -15%;
+      width: 130%;
+      height: 130%;
+      object-fit: cover;
+      opacity: .5;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      font-size: 0.85rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-family: 'Lora', serif;
+    }
+
+    .nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav a:hover { color: var(--rust); }
+
+    .nav .back {
+      color: var(--rust);
+      font-style: italic;
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 0.9rem;
+    }
+
+    .eyebrow {
+      font-family: 'Lora', serif;
+      font-size: 0.78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      color: var(--ink-deep);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .intro {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      max-width: 540px;
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--hairline);
+      padding-bottom: 2rem;
+    }
+
+    .articles {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .article-card {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .article-card:first-child {
+      border-top: 1px solid var(--hairline);
+    }
+
+    .article-meta {
+      font-size: 0.78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.6rem;
+    }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink-deep);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-desc {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 0.9rem;
+    }
+
+    .article-link {
+      display: inline-block;
+      color: var(--rust);
+      font-size: 0.9rem;
+      font-style: italic;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s, color .2s;
+      margin-bottom: 0.6rem;
+    }
+
+    .article-link:hover {
+      color: var(--rust-deep);
+      border-bottom-color: var(--rust-deep);
+    }
+
+    .medium-note {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      font-style: italic;
+      margin-top: 0.35rem;
+      border-left: 2px solid var(--rust);
+      padding-left: 0.6rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--hairline);
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      align-items: center;
+    }
+
+    footer a {
+      color: var(--rust);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .page { padding: 2rem 1.25rem 4rem; }
+      h1 { font-size: 1.75rem; }
+      .article-title { font-size: 1.25rem; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <a class="wordmark" href="index.html">Vakeel Street</a>
-    <a class="back" href="index.html">← Back</a>
-  </div>
-</header>
 
-<section class="head reveal">
-  <div class="wrap">
-    <span class="smallcaps">Proof of work</span>
+  <img class="paper-layer" src="paper-web.jpg" alt="" aria-hidden="true" />
+
+  <div class="page">
+
+    <nav class="nav">
+      <a href="https://vakeelstreet.com/index.html">Vakeel Street</a>
+      <a class="back" href="https://vakeelstreet.com/index.html">← Back</a>
+    </nav>
+
+    <p class="eyebrow">Proof of work</p>
     <h1>How I think, in writing.</h1>
-    <svg class="underline-draw" viewBox="0 0 120 10" aria-hidden="true"><path d="M3 6 C 30 2, 70 9, 117 5"/></svg>
-    <p>Before you send me your situation, read mine. These are published briefs — the same reasoning, the same precision, applied in public.</p>
+    <p class="intro">Before you send me your situation, read mine. These are published briefs — the same reasoning, the same precision, applied in public.</p>
+
+    <div class="articles">
+
+      <div class="article-card">
+        <p class="article-meta">Medium · June 2026</p>
+        <p class="article-title">Why NRIs Lose Property in India — And How to Stop It Before You Leave</p>
+        <p class="article-desc">The pattern behind nearly every lost property, and the documentary step that interrupts it.</p>
+        <a class="article-link" href="https://vakeelstreet.medium.com/why-nris-lose-property-in-india-and-how-to-stop-it-before-you-leave" target="_blank" rel="noopener">Read the brief →</a>
+        <span class="medium-note">Opens on Medium — free to read. If prompted to sign in, click "Continue reading" to proceed without an account.</span>
+      </div>
+
+      <div class="article-card">
+        <p class="article-meta">Medium · June 2026</p>
+        <p class="article-title">When the Government Is the Problem, This Is What You Send Them</p>
+        <p class="article-desc">Administrative silence is not a dead end. What a precisely worded representation or RTI sets in motion.</p>
+        <a class="article-link" href="https://vakeelstreet.medium.com/when-the-government-is-the-problem-this-is-what-you-send-them" target="_blank" rel="noopener">Read the brief →</a>
+        <span class="medium-note">Opens on Medium — free to read. If prompted to sign in, click "Continue reading" to proceed without an account.</span>
+      </div>
+
+      <div class="article-card">
+        <p class="article-meta">Medium · June 2026</p>
+        <p class="article-title">The First Step Is Not Toward Winning. It Is Toward Knowing.</p>
+        <p class="article-desc">Why the first move in any property matter is documentary, not legal — and what knowing actually costs.</p>
+        <a class="article-link" href="https://vakeelstreet.medium.com/the-first-step-is-not-toward-winning-it-is-toward-knowing-96c207f2728a" target="_blank" rel="noopener">Read the brief →</a>
+        <span class="medium-note">Opens on Medium — free to read. If prompted to sign in, click "Continue reading" to proceed without an account.</span>
+      </div>
+
+    </div>
+
+    <footer>
+      <span>Xitij Kaushik · Advocate · High Court Uttarakhand · Dubai</span>
+      <a href="https://vakeelstreet.com/tos.html">Terms of service</a>
+      <span style="font-size:0.72rem;">Image: Magnific</span>
+    </footer>
+
   </div>
-</section>
 
-<section class="articles wrap">
-  <a class="article reveal" href="https://vakeelstreet.medium.com/why-nris-lose-property-in-india-and-how-to-stop-it-before-you-leave" target="_blank" rel="noopener">
-    <span class="smallcaps">Medium · June 2026</span>
-    <h2>Why NRIs Lose Property in India — And How to Stop It Before You Leave</h2>
-    <p>The pattern behind nearly every lost property, and the documentary step that interrupts it.</p>
-    <span class="read">Read the brief →</span>
-  </a>
-  <a class="article reveal" href="https://vakeelstreet.medium.com/when-the-government-is-the-problem-this-is-what-you-send-them" target="_blank" rel="noopener">
-    <span class="smallcaps">Medium · June 2026</span>
-    <h2>When the Government Is the Problem, This Is What You Send Them</h2>
-    <p>Administrative silence is not a dead end. What a precisely worded representation or RTI sets in motion.</p>
-    <span class="read">Read the brief →</span>
-  </a>
-  <a class="article reveal" href="https://vakeelstreet.medium.com/the-first-step-is-not-toward-winning-it-is-toward-knowing-96c207f2728a" target="_blank" rel="noopener">
-    <span class="smallcaps">Medium · June 2026</span>
-    <h2>The First Step Is Not Toward Winning. It Is Toward Knowing.</h2>
-    <p>Why the first move in any property matter is documentary, not legal — and what knowing actually costs.</p>
-    <span class="read">Read the brief →</span>
-  </a>
-</section>
-
-<footer>
-  <div class="wrap">Xitij Kaushik · Advocate · High Court Uttarakhand · Dubai &nbsp;—&nbsp; <a href="tos.html">Terms of service</a></div>
-</footer>
-
-<script>
-(function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var t=document.querySelectorAll('.reveal');
-  if(reduce||!('IntersectionObserver' in window)){t.forEach(function(x){x.classList.add('inked')});return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('inked');io.unobserve(e.target)}})},
-    {threshold:.18});
-  t.forEach(function(x){io.observe(x)});
-})();
-</script>
 </body>
 </html>
