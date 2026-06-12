@@ -20,9 +20,7 @@
       --rust-deep:     #74380F;
       --hairline:      rgba(44,26,14,.18);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background: var(--paper);
       color: var(--ink-body);
@@ -33,7 +31,6 @@
       position: relative;
       -webkit-font-smoothing: antialiased;
     }
-
     .paper-layer {
       position: fixed;
       inset: -15%;
@@ -44,7 +41,6 @@
       z-index: 0;
       pointer-events: none;
     }
-
     .page {
       position: relative;
       z-index: 1;
@@ -52,7 +48,6 @@
       margin: 0 auto;
       padding: 3rem 2rem 5rem;
     }
-
     .nav {
       display: flex;
       align-items: center;
@@ -63,15 +58,8 @@
       text-transform: uppercase;
       font-family: 'Lora', serif;
     }
-
-    .nav a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      transition: color .2s;
-    }
-
+    .nav a { color: var(--ink-soft); text-decoration: none; transition: color .2s; }
     .nav a:hover { color: var(--rust); }
-
     .nav .back {
       color: var(--rust);
       font-style: italic;
@@ -79,7 +67,6 @@
       text-transform: none;
       font-size: 0.9rem;
     }
-
     .eyebrow {
       font-family: 'Lora', serif;
       font-size: 0.78rem;
@@ -88,7 +75,6 @@
       color: var(--rust);
       margin-bottom: 0.75rem;
     }
-
     h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 5vw, 3rem);
@@ -97,8 +83,6 @@
       line-height: 1.15;
       margin-bottom: 1rem;
     }
-
-    /* Ink stroke */
     .inkstroke {
       display: block;
       width: min(300px, 70%);
@@ -106,7 +90,6 @@
       overflow: visible;
       margin-bottom: 1.2rem;
     }
-
     .inkstroke path {
       fill: none;
       stroke: var(--rust);
@@ -115,13 +98,10 @@
       stroke-dasharray: 480;
       stroke-dashoffset: 480;
     }
-
     .loaded .inkstroke path {
       animation: draw 1.4s cubic-bezier(.6,.05,.3,.95) 0.3s forwards;
     }
-
     @keyframes draw { to { stroke-dashoffset: 0; } }
-
     .intro {
       color: var(--ink-soft);
       font-size: 1rem;
@@ -130,22 +110,9 @@
       border-bottom: 1px solid var(--hairline);
       padding-bottom: 2rem;
     }
-
-    .articles {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .article-card {
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--hairline);
-    }
-
-    .article-card:first-child {
-      border-top: 1px solid var(--hairline);
-    }
-
+    .articles { display: flex; flex-direction: column; gap: 0; }
+    .article-card { padding: 2rem 0; border-bottom: 1px solid var(--hairline); }
+    .article-card:first-child { border-top: 1px solid var(--hairline); }
     .article-meta {
       font-size: 0.78rem;
       letter-spacing: .08em;
@@ -153,7 +120,6 @@
       color: var(--ink-soft);
       margin-bottom: 0.6rem;
     }
-
     .article-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.45rem;
@@ -162,14 +128,12 @@
       line-height: 1.25;
       margin-bottom: 0.5rem;
     }
-
     .article-desc {
       color: var(--ink-soft);
       font-size: 0.95rem;
       line-height: 1.65;
       margin-bottom: 0.9rem;
     }
-
     .article-link {
       display: inline-block;
       color: var(--rust);
@@ -180,12 +144,7 @@
       transition: border-color .2s, color .2s;
       margin-bottom: 0.6rem;
     }
-
-    .article-link:hover {
-      color: var(--rust-deep);
-      border-bottom-color: var(--rust-deep);
-    }
-
+    .article-link:hover { color: var(--rust-deep); border-bottom-color: var(--rust-deep); }
     .medium-note {
       display: block;
       font-size: 0.78rem;
@@ -195,7 +154,6 @@
       border-left: 2px solid var(--rust);
       padding-left: 0.6rem;
     }
-
     footer {
       margin-top: 4rem;
       padding: 1.5rem;
@@ -208,35 +166,16 @@
       align-items: center;
       border-radius: 2px;
     }
-
-    footer a {
-      color: #E9E1D2;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color .3s;
-    }
-
+    footer a { color: #E9E1D2; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .3s; }
     footer a:hover { border-bottom-color: #E9E1D2; }
-
-    footer .credit {
-      width: 100%;
-      margin-top: 8px;
-      font-size: 0.7rem;
-      color: #B5A88F;
-      letter-spacing: .06em;
-    }
-
+    footer .credit { width: 100%; margin-top: 8px; font-size: 0.7rem; color: #B5A88F; letter-spacing: .06em; }
     @media (max-width: 600px) {
       .page { padding: 2rem 1.25rem 4rem; }
       h1 { font-size: 1.75rem; }
       .article-title { font-size: 1.25rem; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      .inkstroke path {
-        stroke-dashoffset: 0 !important;
-        animation: none !important;
-      }
+      .inkstroke path { stroke-dashoffset: 0 !important; animation: none !important; }
     }
   </style>
 </head>
@@ -266,7 +205,7 @@
         <p class="article-meta">Medium · June 2026</p>
         <p class="article-title">Why NRIs Lose Property in India — And How to Stop It Before You Leave</p>
         <p class="article-desc">The pattern behind nearly every lost property, and the documentary step that interrupts it.</p>
-        <a class="article-link" href="https://vakeelstreet.medium.com/why-nris-lose-property-in-india-and-how-to-stop-it-before-you-leave" target="_blank" rel="noopener">Read the brief →</a>
+        <a class="article-link" href="https://medium.com/@vakeelstreet/why-nris-lose-property-in-india-and-how-to-stop-it-before-you-leave" target="_blank" rel="noopener">Read the brief →</a>
         <span class="medium-note">Opens on Medium — free to read. If prompted to sign in, click "Continue reading" to proceed without an account.</span>
       </div>
 
@@ -274,7 +213,7 @@
         <p class="article-meta">Medium · June 2026</p>
         <p class="article-title">When the Government Is the Problem, This Is What You Send Them</p>
         <p class="article-desc">Administrative silence is not a dead end. What a precisely worded representation or RTI sets in motion.</p>
-        <a class="article-link" href="https://vakeelstreet.medium.com/when-the-government-is-the-problem-this-is-what-you-send-them" target="_blank" rel="noopener">Read the brief →</a>
+        <a class="article-link" href="https://medium.com/@vakeelstreet/when-the-government-is-the-problem-this-is-what-you-send-them" target="_blank" rel="noopener">Read the brief →</a>
         <span class="medium-note">Opens on Medium — free to read. If prompted to sign in, click "Continue reading" to proceed without an account.</span>
       </div>
 
@@ -282,7 +221,7 @@
         <p class="article-meta">Medium · June 2026</p>
         <p class="article-title">The First Step Is Not Toward Winning. It Is Toward Knowing.</p>
         <p class="article-desc">Why the first move in any property matter is documentary, not legal — and what knowing actually costs.</p>
-        <a class="article-link" href="https://vakeelstreet.medium.com/the-first-step-is-not-toward-winning-it-is-toward-knowing-96c207f2728a" target="_blank" rel="noopener">Read the brief →</a>
+        <a class="article-link" href="https://medium.com/@vakeelstreet/the-first-step-is-not-toward-winning-it-is-toward-knowing-96c207f2728a" target="_blank" rel="noopener">Read the brief →</a>
         <span class="medium-note">Opens on Medium — free to read. If prompted to sign in, click "Continue reading" to proceed without an account.</span>
       </div>
 
