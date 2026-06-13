@@ -3,24 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vakeel Street — Property Documentation for NRI Professionals</title>
+<title>Vakeel Street — Legal Documents for Indians Abroad</title>
 <meta name="description" content="India-side property documentation drafted to High Court standard. Advocate with High Court Uttarakhand standing, based in Dubai. 48-hour delivery.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   VAKEEL STREET — INK SYSTEM v2
-   Strain fix: deepest ink reserved for headings only.
-   Body softened to warm sepia. Generous leading. Paper breathes.
-   ============================================================ */
 :root{
   --paper:      #EDE8DC;
-  --paper-lift: #F3EFE5;   /* lifted paper for cards — less density */
-  --ink-deep:   #1A1008;   /* headings ONLY */
-  --ink-body:   #46342355; /* never used raw — see --ink-body-solid */
-  --ink-body-solid: #463423; /* body text — softened sepia, was #2C1A0E */
-  --ink-soft:   #6E5C48;   /* captions, meta, small-caps */
+  --paper-lift: #F3EFE5;
+  --ink-deep:   #1A1008;
+  --ink-body:   #46342355;
+  --ink-body-solid: #463423;
+  --ink-soft:   #6E5C48;
   --cloth:      #5C4A35;
   --rust:       #8B4513;
   --rust-deep:  #74380F;
@@ -35,19 +30,16 @@ body{
   background:var(--paper);
   color:var(--ink-body-solid);
   font-size:17px;
-  line-height:1.78;          /* strain fix: raised from typical 1.5 */
+  line-height:1.78;
   letter-spacing:.01em;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-/* Paper texture as <img> per standing rule — placeholder grain,
-   swap src for Magnific handmade-paper asset at commit */
 .paper-layer{
   position:fixed;inset:-15%;width:130%;height:130%;
   object-fit:cover;z-index:0;pointer-events:none;opacity:.5;
 }
 .page{position:relative;z-index:1}
-
 h1,h2,h3{font-family:var(--serif-display);color:var(--ink-deep);font-weight:600;line-height:1.12}
 .smallcaps{
   font-family:var(--serif-body);
@@ -56,8 +48,6 @@ h1,h2,h3{font-family:var(--serif-display);color:var(--ink-deep);font-weight:600;
 }
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 section{position:relative}
-
-/* ---------- header ---------- */
 header{
   position:sticky;top:0;z-index:50;
   background:color-mix(in srgb, var(--paper) 88%, transparent);
@@ -78,8 +68,6 @@ header{
 }
 .nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
 .nav-links a:hover{color:var(--ink-deep)}
-
-/* ---------- hero ---------- */
 .hero{padding:72px 0 88px;min-height:78vh;display:flex;align-items:center}
 .hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:56px;align-items:center;width:100%}
 .hero h1{
@@ -97,9 +85,9 @@ header{
   margin-top:26px;font-size:1.16rem;line-height:1.8;max-width:34rem;
   opacity:0;transform:translateY(20px);
 }
-.hero-creds{margin-top:22px;opacity:0;transform:translateY(16px)}
+.hero-name{margin-top:22px;opacity:0;transform:translateY(16px)}
+.hero-creds{margin-top:6px;opacity:0;transform:translateY(16px)}
 .hero-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;opacity:0;transform:translateY(16px)}
-
 .btn{
   display:inline-block;text-decoration:none;font-family:var(--serif-body);
   font-size:.92rem;letter-spacing:.06em;padding:15px 30px;border-radius:2px;
@@ -111,20 +99,17 @@ header{
 .btn-ghost{color:var(--ink-deep);border:1px solid var(--hairline)}
 .btn-ghost:hover,.btn-ghost:focus-visible{border-color:var(--rust);color:var(--rust);transform:translateY(-3px)}
 a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
-
-/* page-load orchestration */
 .loaded .inkstroke path{animation:draw 1.4s cubic-bezier(.6,.05,.3,.95) .15s forwards}
 .loaded .hero-line{animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
 .loaded .hero-line:nth-child(1){animation-delay:1.15s}
 .loaded .hero-line:nth-child(2){animation-delay:1.32s}
 .loaded .hero-line:nth-child(3){animation-delay:1.49s}
 .loaded .hero-sub{animation:rise .8s cubic-bezier(.2,.7,.2,1) 1.85s forwards}
-.loaded .hero-creds{animation:rise .8s cubic-bezier(.2,.7,.2,1) 2.05s forwards}
+.loaded .hero-name{animation:rise .8s cubic-bezier(.2,.7,.2,1) 2.0s forwards}
+.loaded .hero-creds{animation:rise .8s cubic-bezier(.2,.7,.2,1) 2.1s forwards}
 .loaded .hero-ctas{animation:rise .8s cubic-bezier(.2,.7,.2,1) 2.2s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes rise{to{opacity:1;transform:translateY(0)}}
-
-/* portrait placeholder */
 .portrait{
   aspect-ratio:4/5;background:var(--paper-lift);
   border:1px solid var(--hairline);border-radius:2px;
@@ -134,15 +119,11 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 }
 .loaded .portrait{animation:rise 1s cubic-bezier(.2,.7,.2,1) 1.6s forwards}
 .portrait span{color:var(--ink-soft);font-style:italic;font-size:.95rem}
-
-/* ---------- scroll-reveal primitives ---------- */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)}
 .reveal.inked{opacity:1;transform:translateY(0)}
 .underline-draw{display:block;width:120px;height:10px;margin-top:14px}
 .underline-draw path{fill:none;stroke:var(--rust);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:140;stroke-dashoffset:140;transition:stroke-dashoffset 1s cubic-bezier(.6,.05,.3,.95) .2s}
 .inked .underline-draw path{stroke-dashoffset:0}
-
-/* ---------- monologue ---------- */
 .monologue{padding:96px 0;text-align:center}
 .monologue blockquote{
   font-family:var(--serif-display);font-style:italic;font-weight:500;
@@ -151,8 +132,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 }
 .monologue p{margin-top:26px;font-size:1.1rem;color:var(--ink-deep)}
 .monologue .note{margin-top:18px;font-size:.8rem;color:var(--ink-soft);font-style:italic}
-
-/* ---------- steps : scrollytelling ---------- */
 .steps{padding:88px 0 100px;border-top:1px solid var(--hairline)}
 .steps-head{max-width:40rem}
 .steps h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px}
@@ -167,13 +146,10 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 }
 .step h3{font-size:1.55rem;margin-bottom:12px}
 .step p{max-width:38rem}
-/* sequential ink-in: number first, then text */
 .step .step-no{opacity:0;transform:translateX(-18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .step .step-body{opacity:0;transform:translateY(22px);transition:opacity .8s ease .25s,transform .8s cubic-bezier(.2,.7,.2,1) .25s}
 .step.inked .step-no{opacity:.92;transform:none}
 .step.inked .step-body{opacity:1;transform:none}
-
-/* ---------- pricing ---------- */
 .pricing{padding:88px 0 100px;border-top:1px solid var(--hairline)}
 .pricing h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px}
 .pricing .intro{margin-top:18px;max-width:36rem}
@@ -192,15 +168,11 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 .price s{font-size:1.3rem;color:#A14A3A;font-weight:400;margin-left:10px;text-decoration-thickness:2px}
 .card h3{font-size:1.2rem;margin:10px 0 12px}
 .card p{font-size:.97rem;line-height:1.7}
-
-/* ---------- proof of work strip ---------- */
 .proofstrip{padding:80px 0;border-top:1px solid var(--hairline)}
 .proofstrip .row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .proofstrip h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-top:14px}
 .proofstrip a.more{color:var(--rust);text-decoration:none;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1.5px solid transparent;transition:border-color .3s}
 .proofstrip a.more:hover{border-color:var(--rust)}
-
-/* ---------- closing / signature ---------- */
 .closing{padding:110px 0 90px;text-align:center;border-top:1px solid var(--hairline)}
 .closing h2{font-size:clamp(1.9rem,3.6vw,2.8rem);max-width:34rem;margin:0 auto}
 .sig{width:240px;height:90px;margin:44px auto 0;display:block}
@@ -208,8 +180,6 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 .inked .sig path{stroke-dashoffset:0}
 .sig-caption{margin-top:6px}
 .sig-note{font-size:.74rem;color:var(--ink-soft);font-style:italic;margin-top:10px}
-
-/* ---------- footer ---------- */
 footer{background:var(--cloth);color:#E9E1D2;padding:54px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 footer .fname{font-family:var(--serif-display);font-size:1.2rem;color:#F3EDE0}
@@ -218,8 +188,6 @@ footer nav{display:flex;gap:22px;flex-wrap:wrap}
 footer a{color:#E9E1D2;text-decoration:none;font-size:.88rem;border-bottom:1px solid transparent;transition:border-color .3s}
 footer a:hover{border-color:#E9E1D2}
 footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-spacing:.06em}
-
-/* ---------- mobile ---------- */
 @media (max-width:880px){
   .hero{padding:48px 0 64px;min-height:auto}
   .hero-grid{grid-template-columns:1fr;gap:40px}
@@ -235,11 +203,9 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
   .nav-links a:nth-child(2){display:none}
   .hero-ctas .btn{width:100%;text-align:center}
 }
-
-/* ---------- reduced motion: page arrives complete ---------- */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  .hero-line,.hero-sub,.hero-creds,.hero-ctas,.portrait,.reveal,.step .step-no,.step .step-body{
+  .hero-line,.hero-sub,.hero-name,.hero-creds,.hero-ctas,.portrait,.reveal,.step .step-no,.step .step-body{
     opacity:1 !important;transform:none !important;animation:none !important;transition:none !important;
   }
   .inkstroke path,.underline-draw path,.sig path{stroke-dashoffset:0 !important;animation:none !important;transition:none !important}
@@ -248,10 +214,7 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
 </style>
 </head>
 <body>
-<!-- Paper as <img> per standing rule. Placeholder grain — swap src for
-     Magnific handmade-paper asset at commit. -->
 <img class="paper-layer" alt="" aria-hidden="true" src="paper-web.jpg">
-
 <div class="page">
 <header>
   <div class="nav">
@@ -265,7 +228,6 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
   </div>
 </header>
 
-<!-- ============ HERO — the ink commits to the first line ============ -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
@@ -273,34 +235,33 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
         <path d="M4 16 C 60 6, 120 22, 178 13 S 290 8, 336 15"/>
       </svg>
       <h1>
-        <span class="hero-line">Every property matter</span>
-        <span class="hero-line">needs <em>an address.</em></span>
-        <span class="hero-line">This is yours.</span>
+        <span class="hero-line">The distance between you and India</span>
+        <span class="hero-line">is not the problem.</span>
+        <span class="hero-line"><em>The document is.</em></span>
       </h1>
       <p class="hero-sub">You don't need to know the law. You need someone who does — and who will actually respond.</p>
+      <p class="hero-name" style="font-family:var(--serif-display);font-size:1.1rem;color:var(--ink-deep);font-weight:600;margin-top:22px;">I am Xitij Kaushik</p>
       <p class="hero-creds smallcaps">Enrollment No. UK/429/13 · High Court Uttarakhand · 18 years at the bar · Dubai</p>
       <div class="hero-ctas">
         <a class="btn btn-rust" href="#contact">Tell me your situation</a>
         <a class="btn btn-ghost" href="#how">How it works</a>
       </div>
     </div>
-    <div class="portrait" role="img" aria-label="Portrait placeholder — Martin session, Friday 13 June">
+    <div class="portrait" role="img" aria-label="Portrait placeholder — Martin session, Wednesday 17 or Thursday 18 June">
       <span>Portrait</span>
-      <span class="smallcaps">Martin · Friday 13 June</span>
+      <span class="smallcaps">Martin · 17/18 June</span>
     </div>
   </div>
 </section>
 
-<!-- ============ MONOLOGUE ============ -->
 <section class="monologue">
   <div class="wrap">
     <blockquote class="reveal">"It has been weeks. Nobody has responded. I don't even know if what I did was right."</blockquote>
     <p class="reveal">Do you often think on these lines?</p>
-    <p class="note reveal">— an inner voice familiar to anyone managing property in India from abroad.</p>
+    <p class="note reveal">— because the system was never designed for someone who left</p>
   </div>
 </section>
 
-<!-- ============ STEPS — the brief writes itself ============ -->
 <section class="steps" id="how">
   <div class="wrap">
     <div class="steps-head reveal">
@@ -308,7 +269,6 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
       <h2>Three steps. No office visit required.</h2>
       <svg class="underline-draw" viewBox="0 0 120 10" aria-hidden="true"><path d="M3 6 C 30 2, 70 9, 117 5"/></svg>
     </div>
-
     <div class="step">
       <div class="step-no" aria-hidden="true">1</div>
       <div class="step-body">
@@ -316,7 +276,6 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
         <p>Send me the documents you hold — title deed, mutation record, sale agreement — whatever exists. I read them and tell you exactly what is missing or what needs to move next.</p>
       </div>
     </div>
-
     <div class="step">
       <div class="step-no" aria-hidden="true">2</div>
       <div class="step-body">
@@ -324,7 +283,6 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
         <p>Within 48 hours, your document is drafted to High Court standard — a contract, application, complaint, or strategic brief tailored to your situation. Precise enough to resolve the matter. Solid enough to form the basis of any further action in India.</p>
       </div>
     </div>
-
     <div class="step">
       <div class="step-no" aria-hidden="true">3</div>
       <div class="step-body">
@@ -335,7 +293,6 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
   </div>
 </section>
 
-<!-- ============ PRICING ============ -->
 <section class="pricing" id="pricing">
   <div class="wrap">
     <div class="reveal">
@@ -365,7 +322,6 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
   </div>
 </section>
 
-<!-- ============ PROOF OF WORK STRIP ============ -->
 <section class="proofstrip">
   <div class="wrap row reveal">
     <div>
@@ -376,15 +332,12 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
   </div>
 </section>
 
-<!-- ============ CLOSING — the signature ============ -->
 <section class="closing reveal" id="contact">
   <div class="wrap">
     <h2>Write to me. I respond — that is the entire point.</h2>
     <div class="hero-ctas" style="justify-content:center;opacity:1;transform:none">
       <a class="btn btn-rust" href="mailto:vakeelstreet@gmail.com">vakeelstreet@gmail.com</a>
     </div>
-    <!-- Signature placeholder flourish — replaced by Xitij's handwritten
-         signature traced to SVG when provided -->
     <svg class="sig" viewBox="0 0 240 90" aria-hidden="true">
       <path d="M18 62 C 40 18, 58 24, 52 52 C 48 70, 70 66, 84 44 C 96 26, 104 30, 100 50 C 97 64, 112 62, 126 48 C 142 32, 158 36, 152 54 C 148 66, 166 64, 182 50 C 196 38, 214 44, 224 56"/>
     </svg>
@@ -410,14 +363,11 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
 </div>
 
 <script>
-/* Editorial motion layer — ~25 lines, no libraries.
-   Reduced-motion users get the page complete and still. */
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.documentElement.classList.add('js');
   if(!reduce){ requestAnimationFrame(function(){ document.body.classList.add('loaded'); }); }
   else { document.body.classList.add('loaded'); }
-
   var targets = document.querySelectorAll('.reveal, .step');
   if(reduce || !('IntersectionObserver' in window)){
     targets.forEach(function(t){ t.classList.add('inked'); });
