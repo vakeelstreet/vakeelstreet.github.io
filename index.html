@@ -112,7 +112,7 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 @keyframes rise{to{opacity:1;transform:translateY(0)}}
 .portrait{
   aspect-ratio:4/5;background:var(--paper-lift);
-  border:1px solid var(--hairline);border-radius:2px;
+  border:1px solid var(--hairline);border-radius:2px;overflow:hidden;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
   box-shadow:14px 14px 0 -6px rgba(92,74,53,.14);
   opacity:0;transform:translateY(20px);
@@ -189,19 +189,26 @@ footer a{color:#E9E1D2;text-decoration:none;font-size:.88rem;border-bottom:1px s
 footer a:hover{border-color:#E9E1D2}
 footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-spacing:.06em}
 @media (max-width:880px){
-  .hero{padding:48px 0 64px;min-height:auto}
-  .hero-grid{grid-template-columns:1fr;gap:40px}
-  .portrait{max-width:320px;margin:0 auto}
+  .hero{padding:40px 0 48px;min-height:auto}
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .portrait{max-width:280px;margin:0 auto}
   .cards{grid-template-columns:1fr;gap:30px}
-  .step{grid-template-columns:64px 1fr;gap:20px;padding:42px 0}
-  .step-no{font-size:2.8rem}
+  .step{grid-template-columns:56px 1fr;gap:18px;padding:36px 0}
+  .step-no{font-size:clamp(2rem,7vw,2.8rem)}
   body{font-size:16.5px}
   .nav-links{gap:18px}
   .nav-links a{font-size:.74rem}
+  .hero-name{margin-top:16px}
+  .hero-creds{margin-top:4px}
+  .hero-ctas{margin-top:22px;gap:12px}
 }
 @media (max-width:480px){
   .nav-links a:nth-child(2){display:none}
   .hero-ctas .btn{width:100%;text-align:center}
+  .hero{padding:28px 0 36px}
+  .hero h1{font-size:clamp(2.1rem,8vw,2.6rem)}
+  .hero-sub{margin-top:16px;font-size:1.05rem}
+  .portrait{max-width:240px}
 }
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
@@ -212,6 +219,176 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
   .btn,.card{transition:none}
 }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9VRQ977528"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9VRQ977528');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://vakeelstreet.com/#xitij-kaushik",
+      "name": "Xitij Kaushik",
+      "jobTitle": "Advocate",
+      "description": "Enrolled advocate at the High Court of Uttarakhand, India (Enrollment No. UK/429/13), based in Dubai. Drafts Indian legal documents personally for NRIs — complaints, writs, RTIs, POAs, contracts, and representations — without requiring the client to travel or visit any office.",
+      "knowsAbout": [
+        "Indian property law",
+        "Power of Attorney drafting for NRIs",
+        "Consumer complaints India",
+        "RTI applications India",
+        "Writ petitions High Court",
+        "Legal documents for Non-Resident Indians",
+        "NRI legal advisory",
+        "Complaint drafting against government authorities",
+        "Passport and RPO matters India",
+        "Inheritance and succession documents India"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Enrollment",
+        "name": "Advocate Enrollment",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "High Court of Uttarakhand"
+        },
+        "identifier": "UK/429/13"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "name": "Dubai, United Arab Emirates"
+      },
+      "worksFor": {
+        "@id": "https://vakeelstreet.com/#vakeel-street"
+      },
+      "email": "vakeelstreet@gmail.com",
+      "url": "https://vakeelstreet.com"
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://vakeelstreet.com/#vakeel-street",
+      "name": "Vakeel Street",
+      "url": "https://vakeelstreet.com",
+      "logo": "https://vakeelstreet.com/paper-web.jpg",
+      "description": "Indian legal document drafting and advisory service for Non-Resident Indians worldwide. Documents drafted personally by an enrolled Indian High Court advocate based in Dubai. No office visit required. Services include complaint drafting, writ petitions, RTI applications, Power of Attorney, contracts, legal representations, and strategic briefs for Indian courts and authorities.",
+      "founder": {
+        "@id": "https://vakeelstreet.com/#xitij-kaushik"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Worldwide — serving Non-Resident Indians in all countries for matters in all Indian states"
+      },
+      "serviceType": [
+        "Legal document drafting",
+        "Complaint drafting",
+        "Writ petition drafting",
+        "RTI application drafting",
+        "Power of Attorney drafting",
+        "Contract drafting",
+        "Legal advisory for NRIs",
+        "Property documentation for NRIs",
+        "Consumer complaint drafting",
+        "Government authority representations"
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://vakeelstreet.com",
+        "serviceType": "Email",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      "email": "vakeelstreet@gmail.com",
+      "sameAs": [
+        "https://medium.com/@vakeelstreet"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://vakeelstreet.com/#website",
+      "name": "Vakeel Street",
+      "url": "https://vakeelstreet.com",
+      "description": "Legal document drafting for Non-Resident Indians. High Court standard. Drafted personally by an enrolled advocate in Dubai.",
+      "publisher": {
+        "@id": "https://vakeelstreet.com/#vakeel-street"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vakeelstreet.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can an NRI get Indian legal documents drafted without visiting India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Vakeel Street drafts all documents remotely. You share your situation and existing documents by email. Xitij Kaushik, an enrolled Indian High Court advocate based in Dubai, drafts the document personally and delivers it within 48 hours. No office visit, no travel to India required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of legal documents can NRIs get drafted from abroad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vakeel Street drafts complaints (consumer, criminal, civil), writ petitions, RTI applications, Powers of Attorney, property-related documents, legal representations to government authorities, contracts, and strategic briefs for Indian courts. The drafting covers matters across all Indian states."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does an NRI file a complaint against a government authority in India from abroad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An NRI can have a complaint drafted to the relevant authority — whether an IG, RPO, District Magistrate, or consumer forum — by a qualified Indian advocate, then have it filed through a Power of Attorney holder, an affected relative, or any authorised party in India. Vakeel Street handles the drafting to High Court standard. The document is designed to be filed without further briefing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does an NRI send a Power of Attorney from abroad for property in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "An NRI can execute a Power of Attorney from abroad by having it drafted by an Indian advocate, then signing it before the Indian Consulate or a Notary Public in their country of residence (with apostille if required under the Hague Convention). The document is then sent to India for registration. Vakeel Street drafts the POA to the precision required for property transactions, court filings, or administrative matters in any Indian state."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can an NRI file an RTI application from abroad?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. An NRI can file an RTI application in India from abroad. The application must be addressed to the correct Public Information Officer, cover the right department, and be precise enough to compel a substantive response. Vakeel Street drafts RTI applications to High Court standard, covering all Indian states and central government authorities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who drafts the documents at Vakeel Street?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every document is drafted personally by Xitij Kaushik, an advocate enrolled at the High Court of Uttarakhand (Enrollment No. UK/429/13), based in Dubai. There is no junior, no outsourcing, no template. Xitij reads your situation, responds to your query, and drafts the document himself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to get a legal document drafted for India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vakeel Street delivers drafted documents within 48 hours of receiving your brief and supporting documents."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can an NRI in Dubai or the UAE get Indian legal documents drafted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Vakeel Street is run by an advocate based in Dubai, making it particularly accessible for NRIs in the UAE and the Gulf region. The service covers all NRIs worldwide — the advocate and client communicate by email, with no office visit required."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <img class="paper-layer" alt="" aria-hidden="true" src="paper-web.jpg">
@@ -241,15 +418,14 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
       </h1>
       <p class="hero-sub">You don't need to know the law. You need someone who does — and who will actually respond.</p>
       <p class="hero-name" style="font-family:var(--serif-display);font-size:1.1rem;color:var(--ink-deep);font-weight:600;margin-top:22px;">I am Xitij Kaushik</p>
-      <p class="hero-creds smallcaps">Enrollment No. UK/429/13 · High Court Uttarakhand · 18 years at the bar · Dubai</p>
+      <p class="hero-creds smallcaps">Enrollment No. UK/429/13 · High Court Uttarakhand · 13 years at the bar · Dubai</p>
       <div class="hero-ctas">
         <a class="btn btn-rust" href="#contact">Tell me your situation</a>
         <a class="btn btn-ghost" href="#how">How it works</a>
       </div>
     </div>
-    <div class="portrait" role="img" aria-label="Portrait placeholder — Martin session, Wednesday 17 or Thursday 18 June">
-      <span>Portrait</span>
-      <span class="smallcaps">Martin · 17/18 June</span>
+    <div class="portrait" role="img" aria-label="Xitij Kaushik, Advocate">
+      <img src="portrait.jpg" alt="Xitij Kaushik, Advocate" style="width:100%;height:100%;object-fit:cover;border-radius:2px;">
     </div>
   </div>
 </section>
@@ -338,7 +514,6 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
       <path d="M18 62 C 40 18, 58 24, 52 52 C 48 70, 70 66, 84 44 C 96 26, 104 30, 100 50 C 97 64, 112 62, 126 48 C 142 32, 158 36, 152 54 C 148 66, 166 64, 182 50 C 196 38, 214 44, 224 56"/>
     </svg>
     <p class="sig-caption smallcaps">Xitij Kaushik · Advocate</p>
-    <p class="sig-note">signature placeholder — your handwriting replaces this flourish</p>
   </div>
 </section>
 
