@@ -146,9 +146,9 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 }
 .step h3{font-size:1.55rem;margin-bottom:12px}
 .step p{max-width:38rem}
-.step .step-no{opacity:0;transform:translateX(-18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.step .step-no{opacity:0;transform:translateX(-18px) scale(1.12);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .step .step-body{opacity:0;transform:translateY(22px);transition:opacity .8s ease .25s,transform .8s cubic-bezier(.2,.7,.2,1) .25s}
-.step.inked .step-no{opacity:.92;transform:none}
+.step.inked .step-no{opacity:.92;transform:translateX(0) scale(1)}
 .step.inked .step-body{opacity:1;transform:none}
 .pricing{padding:88px 0 100px;border-top:1px solid var(--hairline)}
 .pricing h2{font-size:clamp(2rem,4vw,3rem);margin-top:14px}
@@ -180,13 +180,28 @@ a:focus-visible,.btn:focus-visible{outline:2px solid var(--rust);outline-offset:
 .inked .sig path{stroke-dashoffset:0}
 .sig-caption{margin-top:6px}
 .sig-note{font-size:.74rem;color:var(--ink-soft);font-style:italic;margin-top:10px}
+.sig-img{
+  width:240px;height:auto;margin:44px auto 0;display:block;
+  clip-path:inset(0 100% 0 0);
+}
+.inked .sig-img{
+  animation:signwrite 1.8s cubic-bezier(.5,.05,.3,.95) .3s forwards;
+}
+@keyframes signwrite{
+  to{clip-path:inset(0 0 0 0)}
+}
 footer{background:var(--cloth);color:#E9E1D2;padding:54px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
 footer .fname{font-family:var(--serif-display);font-size:1.2rem;color:#F3EDE0}
 footer .fmeta{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#CBBFA9;margin-top:6px}
 footer nav{display:flex;gap:22px;flex-wrap:wrap}
-footer a{color:#E9E1D2;text-decoration:none;font-size:.88rem;border-bottom:1px solid transparent;transition:border-color .3s}
-footer a:hover{border-color:#E9E1D2}
+footer a{color:#E9E1D2;text-decoration:none;font-size:.88rem;position:relative}
+footer a::after{
+  content:'';position:absolute;left:0;bottom:-3px;height:1px;width:100%;
+  background:#E9E1D2;transform:scaleX(0);transform-origin:left;
+  transition:transform .35s cubic-bezier(.25,.8,.25,1);
+}
+footer a:hover::after,footer a:focus-visible::after{transform:scaleX(1)}
 footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-spacing:.06em}
 @media (max-width:880px){
   .hero{padding:40px 0 48px;min-height:auto}
@@ -216,6 +231,7 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
     opacity:1 !important;transform:none !important;animation:none !important;transition:none !important;
   }
   .inkstroke path,.underline-draw path,.sig path{stroke-dashoffset:0 !important;animation:none !important;transition:none !important}
+  .sig-img{clip-path:none !important;animation:none !important}
   .btn,.card{transition:none}
 }
 </style>
@@ -510,7 +526,7 @@ footer .credit{width:100%;margin-top:30px;font-size:.7rem;color:#B5A88F;letter-s
     <div class="hero-ctas" style="justify-content:center;opacity:1;transform:none">
       <a class="btn btn-rust" href="mailto:vakeelstreet@gmail.com">vakeelstreet@gmail.com</a>
     </div>
-    <img src="signature.png" alt="Xitij Kaushik signature" style="width:240px;height:auto;margin:44px auto 0;display:block;">
+    <img class="sig-img" src="signature.png" alt="Xitij Kaushik signature">
     <p class="sig-caption smallcaps">Xitij Kaushik · Advocate</p>
   </div>
 </section>
