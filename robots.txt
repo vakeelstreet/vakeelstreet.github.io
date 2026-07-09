@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /card/*.vcf
+Disallow: /*.vcf$
+
+Sitemap: https://vakeelstreet.com/sitemap.xml
